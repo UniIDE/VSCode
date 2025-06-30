@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  roles:
+  - dev/ansible-role-Visual-Studio-Code
+  - dev/ansible-role-VSCode-Setting
+
+# - UniInc.Visual-Studio-Code
+# - VSCode Setting/Autosave
+
+# Ansible
+- name: Ansible
+  hosts: localhost
+  roles:
+  - dev/ansible-role-VSCode-extension-Ansible
+
+# - dev/ansible-role-VSCode-Extension
+# - UniInc.VSCode Extension
+
+# when open source only:
+# - dev/ansible-role-VS-Codium

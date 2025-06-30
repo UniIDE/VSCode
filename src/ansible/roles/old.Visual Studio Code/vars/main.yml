@@ -1,0 +1,5 @@
+download_deb_x86: "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+
+flatpak_home: "/var/lib/flatpak/app/com.visualstudio.code/current/active/files/bin"
+
+ubuntu_default: "snapcraft"

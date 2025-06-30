@@ -1,0 +1,11 @@
+- name: Fixes problem with ansible_env.Path not being picked up
+  hosts: default
+  remote_user: vagrant
+  vars:
+    add_path: /snap/bin
+
+  environment:
+    PATH: /usr/local/bin:/usr/bin:/bin:/usr/games:{{add_path}}    #:{{ ansible_env.PATH }}
+
+  roles:
+    - Visual Studio Code/Extension

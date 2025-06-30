@@ -1,0 +1,7 @@
+- name: in Toolbox
+  ansible.builtin.include_tasks: ../in:/Toolbox/main.yml
+  when: in_Toolbox_RedHat
+
+- name: rpm-ostree
+  ansible.builtin.include_tasks: rpm-ostree.yml
+  when: not in_Toolbox_RedHat

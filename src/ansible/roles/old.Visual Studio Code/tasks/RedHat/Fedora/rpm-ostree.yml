@@ -1,0 +1,19 @@
+# install: https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions
+# Silverblue, Kinoite: https://discussion.fedoraproject.org/t/how-to-add-an-additional-repo-file-on-silverblue/35641/4
+
+- name: vscode.repo
+  ansible.builtin.copy:
+    src: vscode.repo
+    dest: /etc/yum.repos.d/vscode.repo
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"
+  become: true
+  
+
+- name: Install VS Code with rpm-ostree
+  community.general.rpm_ostree_pkg:
+    name: code
+    state: present
+  become: true
+  notify:
+  - Reboot

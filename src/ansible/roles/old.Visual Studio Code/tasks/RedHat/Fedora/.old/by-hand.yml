@@ -1,0 +1,24 @@
+---
+- name: Import a key from a url
+  become: true
+  ansible.builtin.rpm_key:
+    state: present
+    key: https://packages.microsoft.com/keys/microsoft.asc
+
+- name: Add Repository
+  become: true
+  ansible.builtin.shell: |
+    echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo
+  args:
+    creates: /etc/yum.repos.d/vscode.repo
+
+- name: Install Visual Studio Code
+  become: true
+  ansible.builtin.dnf:
+    name:
+      - code
+    state: latest
+    update_cache: yes
+
+
+# https://code.visualstudio.com/docs/setup/linux

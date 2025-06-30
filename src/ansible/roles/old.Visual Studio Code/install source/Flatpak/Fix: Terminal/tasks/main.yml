@@ -1,0 +1,11 @@
+- name: Insert/Update "Match User" configuration block in /etc/ssh/sshd_config
+  ansible.builtin.blockinfile:
+    path: "{{ ansible_env.HOME }}/.var/app/com.visualstudio.code/config/Code/User/settings.json
+    block: |
+      "terminal.integrated.env.linux": {
+      "LD_PRELOAD": null,
+      },
+
+#Works:
+#- https://www.reddit.com/r/archlinux/comments/16m3g2r/xxx_preloadhostspawnstrategy_warning_waitpid/
+#- https://stackoverflow.com/questions/65908987/how-to-open-visual-studio-codes-settings-json-file

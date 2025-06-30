@@ -1,0 +1,8 @@
+source: "{{ubuntu_default}}"
+
+install_native: false
+
+in_Toolbox: true
+in_Toolbox_RedHat: false
+
+toolbox_container_name: "fedora-toolbox-{{ ansible_distribution_version }}"

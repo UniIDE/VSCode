@@ -1,0 +1,1 @@
+settings_json: "{{ ansible_env.HOME }}/.var/app/com.visualstudio.code/config/Code/User/settings.json"

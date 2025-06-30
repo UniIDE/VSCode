@@ -1,0 +1,5 @@
+- ansible.builtin.include_role:
+    name: .dep/Snapcraft
+  when: source == "snapcraft"
+
+- include_tasks: ".fn/{{ source }}.yml"

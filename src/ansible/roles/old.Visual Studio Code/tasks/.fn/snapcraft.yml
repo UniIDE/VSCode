@@ -1,0 +1,6 @@
+- name: Installing Visual Studio Code as a Snap package
+  community.general.snap:
+    name: code
+    classic: true
+  become: true
+
