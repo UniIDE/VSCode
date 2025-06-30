@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
+  vars:
+    archlinux_version: Microsoft
   roles:
   - dev/ansible-role-Visual-Studio-Code
   - dev/ansible-role-VSCode-Setting
